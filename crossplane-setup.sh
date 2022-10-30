@@ -25,11 +25,11 @@ done
 
 echo "Setting up Crossplane..."
 if [ -n "${missing}" ]; then
-    echo "Missing required tools: $missing<-attemping to install"
+    echo "Required tools missing: $missing<-attemping to install"
 
     if [ -n "${snapcmd}" ]; then
         cat <<EOF
-You may be asked for your sudo password. On Linux/Snap helm and kubectl will be
+You may be asked for your password. On Linux/Snap helm and kubectl will be
 installed *unconfined* using '--classic' mode, see
 https://askubuntu.com/questions/917049 before proceeding if you do not
 understand the security implications.
@@ -38,8 +38,6 @@ EOF
 
     echo "Sleeping 5 seconds, use <ctrl>-c if you would like to abort..."
     sleep 5
-
-    echo "Proceeding with install of $missing"
 fi
 
 [ -n "${snapcmd}" ] && for m in $missing; do
@@ -82,7 +80,7 @@ done
         echo "Installing Docker and Docker Desktop"
         env -i bash -c 'brew install --cask docker'
         echo "Re-run this script after completing install of Docker Desktop"
-        open /Applications/Docker.app 
+        open /Applications/Docker.app
         exit 2
         ;;
     kind)
