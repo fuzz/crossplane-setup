@@ -23,7 +23,7 @@ to run Crossplane, but that is outside the scope of Crossplane Setup.
 ## Usage
 
 ```
-curl https://raw.githubusercontent.com/fuzz/crossplane-setup/main/crossplane-setup.sh | sh
+curl https://raw.githubusercontent.com/fuzz/crossplane-setup/main/crossplane-setup.sh | bash
 ```
 
 On macOS if you do not have Docker installed that process will be started,
